@@ -1,4 +1,4 @@
-# sparrow-chat
+# Feathers-chat
 
 > 
 
