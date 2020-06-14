@@ -9,6 +9,27 @@ class GitHubStrategy extends OAuthStrategy {
 
     return {
       ...baseData,
+      // You can also set the display name to profile.name
+      name: profile.login,
+      // The GitHub profile image
+      avatar: profile.avatar_url,
+      // The user email address (if available)
+      email: profile.email
+    };
+  }
+}
+
+// Google auth
+class GoogleStrategy extends OAuthStrategy {
+  async getEntityData(profile) {
+
+    // this will set 'googleId'
+    const baseData = await super.getEntityData(profile);
+
+    // this will grab the picture and email address of the Google profile
+    return {
+      ...baseData,
+      profilePicture: profile.picture,
       email: profile.email
     };
   }
@@ -46,6 +67,7 @@ class FacebookStrategy extends OAuthStrategy {
   }
 }
 
+
 module.exports = app => {
   const authService = new AuthenticationService(app);
 
@@ -53,6 +75,7 @@ module.exports = app => {
   authService.register('local', new LocalStrategy());
   authService.register('github', new GitHubStrategy());
   authService.register('facebook', new FacebookStrategy());
+  authService.register('google', new GoogleStrategy());
 
   app.use('/authentication', authService);
   app.configure(expressOauth());

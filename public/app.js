@@ -37,6 +37,9 @@ const loginHTML = `<main class="login container">
         <a class ="button button-primary block" href="/oauth/facebook">
           Login with Facebook
         </a>
+        <a class ="button button-primary block" href="/oauth/google">
+          Login with Google
+        </a>
       </form>
     </div>
   </div>
