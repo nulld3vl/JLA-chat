@@ -12,6 +12,16 @@
       "github": {
         "key": "GITHUB_CLIENT_ID",
         "secret": "GITHUB_CLIENT_SECRET"
+      },
+      "facebook": {
+        "key": "FACEBOOK_CLIENT_ID",
+        "secret": "FACEBOOK_CLIENT_SECRET"
+      },
+      "google": {
+        "key": "GOOGLE_CLIENT_ID",
+        "secret": "GOOGLE_CLIENT_SECRET",
+        "scope": ["profile", "email", "openid"],
+        "nonce": true
       }
     },
     "entity": "user",
