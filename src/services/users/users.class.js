@@ -4,7 +4,7 @@ const { Service } = require('feathers-nedb');
 const crypto = require('crypto');
 
 // The Gravatar image service
-const gravatarUrl = 'https://s.gravatar.com/avatar';
+const gravatarUrl = './userprofile.svg';
 // The size query. Our chat needs 60px images
 const query = 's=60';
 
